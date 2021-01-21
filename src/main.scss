@@ -1,0 +1,28 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: sans-serif;
+}
+
+div.output {
+    position: absolute;
+    z-index: 998;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #404040;
+    color: white;
+    overflow: auto;
+    .text {
+        padding: 10px;
+        height: 50%;
+    }
+    .debug {
+        height: 50%;
+        padding: 10px;
+    }
+}
