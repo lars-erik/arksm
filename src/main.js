@@ -12,8 +12,19 @@ let textureLoader;
 let hitTestSource = null;
 let hitTestSourceRequested = false;
 
-init();
-animate();
+log({ msg: "AR TLKSM LOG" });
+log({ msg: "v 0.0.1-alpha01" });
+
+try {
+    init();
+} catch (e) {
+    log({ msg: e.message });
+}
+try {
+    animate();
+} catch (e) {
+    log({ msg: e.message });
+}
 
 function init() {
 
@@ -70,13 +81,13 @@ function init() {
     reticle.visible = false;
     scene.add(reticle);
 
-    panel = createPanel(.5);
-    panel.matrixAutoUpdate = false;
-    panel.visible = false;
-    scene.add(panel);
-
-    //
     try {
+        panel = createPanel(.5);
+        panel.matrixAutoUpdate = false;
+        panel.visible = false;
+        scene.add(panel);
+
+        //
         textureLoader = new THREE.TextureLoader();
         textureLoader.load('./static/ksm-1.png', tex => {
             tex.flipY = true;
